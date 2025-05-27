@@ -14,7 +14,7 @@ Este projeto fornece uma ferramenta completa em Python para detecção de URLs d
 * dnspython
 * cryptography
 * beautifulsoup4
-* python-Levenshtein
+* rapidfuzz
 * plotly
 
 Instale com:
