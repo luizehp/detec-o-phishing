@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Resultado</title>
+<h1>Resultado para {{ r.url }}</h1>
+<table border=1>
+  {% for k,v in r.items() %}
+  <tr><th>{{ k }}</th><td>{{ v }}</td></tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('index') }}">Nova Verificação</a> |
+<a href="{{ url_for('history') }}">Histórico</a>

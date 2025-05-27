@@ -1,0 +1,30 @@
+<!doctype html>
+<title>Histórico</title>
+<h1>Histórico de Verificações</h1>
+<table border=1>
+  <tr><th>URL</th><th>Timestamp</th><th>Phishing?</th></tr>
+  {% for r in history %}
+  <tr>
+    <td>{{ r.url }}</td>
+    <td>{{ r.timestamp }}</td>
+    <td style="color: {{ 'red' if r.is_phishing else 'green' }}">
+      {{ r.is_phishing }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h2>Resumo</h2>
+<div id="chart"></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+  const chartData = {{ graph|safe }};
+
+  Plotly.newPlot('chart', [{
+    values: chartData.values,
+    labels: chartData.labels,
+    type: 'pie'
+  }]);
+</script>
+
+<a href="{{ url_for('index') }}">Voltar</a>

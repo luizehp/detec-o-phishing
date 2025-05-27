@@ -1,0 +1,9 @@
+Flask
+requests
+tldextract
+python-whois
+dnspython
+cryptography
+beautifulsoup4
+rapidfuzz
+plotly
